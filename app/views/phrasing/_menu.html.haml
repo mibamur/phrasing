@@ -1,8 +1,8 @@
 #header
-  %h1= link_to "Phrasing", phrasing_phrases_path
+  %h1= link_to t(:adminka), '/admin'
   %ul
-    %li= link_to "Phrases", phrasing_phrases_path
-    %li= link_to "Import / Export", import_export_phrasing_phrases_path
-    %li= link_to "Help", help_phrasing_phrases_path
+    %li= link_to t(:phrases), phrasing_phrases_path
+    -# %li= link_to t(:import_export), import_export_phrasing_phrases_path
+    -# %li= link_to "Help", help_phrasing_phrases_path
     - if respond_to? :root_path
-      %li= link_to "Home page", root_path
+      %li= link_to t(:home_page), root_path

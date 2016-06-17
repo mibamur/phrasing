@@ -1,0 +1,11 @@
+ru:
+  in_production: Боевой режим
+  home_page: На сайт
+  phrases: Фразы
+  adminka: В админку
+  import_export: "Импорт / Экспорт"
+  edit_mode: Изменить
+  saved_status: Сохранение
+  edit_all: Все фразы
+  zenpenbubble:
+    url_input_placeholder: "URL ссылка"

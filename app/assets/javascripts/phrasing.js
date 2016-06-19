@@ -33,15 +33,15 @@ StatusBubbleWidget.prototype = {
   },
 
   saving : function(){
-    this._alterStatus('Saving', 'orange');
+    this._alterStatus('Сохранение', 'orange');
   },
 
   saved : function(){
-    this._alterStatus('Saved', '#56AE45');
+    this._alterStatus('Сохранено', '#56AE45');
   },
 
   error : function(){
-    this._alterStatus('Error', 'red');
+    this._alterStatus('Ошибка', 'red');
   }
 };
 
@@ -55,11 +55,21 @@ var phrasing_setup = function(){
   Phrasing.Bus.on('phrasing:edit-mode:on', function(){
     $('.phrasable').addClass("phrasable-on").attr("contenteditable", 'true');
     localStorage.setItem(Phrasing.EDIT_MODE_KEY, 'true');
+
+    $('a').on("click", function(e){
+      if ( !(this.href.indexOf("phrasing") > -1) ) {
+        e.preventDefault();
+      }
+    });
+
   });
 
   Phrasing.Bus.on('phrasing:edit-mode:off', function(){
     $('.phrasable').removeClass("phrasable-on").attr("contenteditable", "false");
     localStorage.setItem(Phrasing.EDIT_MODE_KEY, "false");
+
+    $('a').off('click');
+
   });
 
   // Initialize the editing bubble

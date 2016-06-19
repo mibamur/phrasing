@@ -2,20 +2,16 @@
   .text-options#zenpenbubble
     .options
       %span.no-overflow
-        %span.lengthen.ui-inputs 
+        %span.lengthen.ui-inputs
           %button.url.useicons &#xe005;
-          %input.url-input{placeholder: "Type or Paste URL here", type: "text"}/
+          %input.url-input{placeholder: t('zenpenbubble.url_input_placeholder'), type: "text"}/
           %button.bold b
           %button.italic i
-
-
-
-
 
   #phrasing-edit-mode-bubble
     #phrasing-edit-mode
       #phrasing-edit-mode-headline
-        %p Edit
+        %p= t(:edit_mode)
       #phrasing-onoffswitch
         .onoffswitch
           %input#edit-mode-onoffswitch.onoffswitch-checkbox{checked: "checked", name: "onoffswitch", type: "checkbox"}/
@@ -24,11 +20,16 @@
             .onoffswitch-switch
     #phrasing-saved-status
       #phrasing-saved-status-headline
-        %p Saved
+        %p= t(:saved_status)
       #phrasing-saved-status-indicator
         #phrasing-saved-status-indicator-circle
     #phrasing-edit-all-phrases
       #phrasing-edit-all-phrases-headline
-        %p Edit all
+        %p= t(:edit_all)
       #phrasing-edit-all-phrases-icon-container
         = link_to image_tag("phrasing_icon_edit_all.png", class: 'phrasing-edit-all-phrases-icon'), phrasing_phrases_path, data: { no_turbolink: true }, class: "phrasing-edit-all-phrases-link"
+    = link_to t(:adminka), '/admin/index', class: 'phrasing_admin_link'
+    -# #phrasing-edit-all-phrases2
+      -# #phrasing-edit-all-phrases-headline2
+      -# #phrasing-edit-all-phrases-icon-container2
+        = link_to image_tag("phrasing_icon_edit_all.png", class: 'phrasing-edit-all-phrases-icon'), , data: { no_turbolink: true }, class: "phrasing-edit-all-phrases-link"
